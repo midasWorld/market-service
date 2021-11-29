@@ -2,6 +2,7 @@ package com.midas.marketservice.service;
 
 import com.midas.marketservice.domain.auth.User;
 import com.midas.marketservice.domain.auth.UserRepository;
+import com.midas.marketservice.exception.auth.UserNotFoundException;
 import com.midas.marketservice.web.dto.UserSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,10 +26,10 @@ public class UserService {
     }
 
     public User findByEmail(String email) {
-        return userRepository.findByEmail(email).orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다. email=" + email));
+        return userRepository.findByEmail(email).orElseThrow(() -> new UserNotFoundException("존재하지 않는 회원입니다. email=" + email));
     }
 
     public User findById(Long id) {
-        return userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다. id=" + id));
+        return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("존재하지 않는 회원입니다. id=" + id));
     }
 }
