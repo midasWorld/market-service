@@ -4,6 +4,7 @@ import static java.time.LocalDateTime.*;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 
@@ -18,6 +19,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public abstract class BaseEntity {
 
 	@CreatedDate
+	@Column(nullable = false, updatable = false)
 	protected LocalDateTime createdAt = now();
 
 	@CreatedBy
