@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.midas.marketservice.domain.order.Order;
 import com.midas.marketservice.domain.order.OrderStatus;
-import com.midas.marketservice.web.delivery.DeliveryDto;
 import com.midas.marketservice.web.user.UserDto;
 
 import lombok.Getter;

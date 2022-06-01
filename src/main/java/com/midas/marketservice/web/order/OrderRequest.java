@@ -23,7 +23,8 @@ public class OrderRequest {
 		return map;
 	}
 
-	@Getter @Setter
+	@Getter
+	@Setter
 	static class OrderItemRequest {
 		private Long itemId;
 		private long qty;

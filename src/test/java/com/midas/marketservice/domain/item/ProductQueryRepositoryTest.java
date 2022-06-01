@@ -13,7 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ProductQueryRepositoryTest {
 
-	@Autowired ProductQueryRepository productQueryRepository;
+	@Autowired
+	ProductQueryRepository productQueryRepository;
 
 	@Test
 	@Order(1)

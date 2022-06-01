@@ -11,7 +11,7 @@ class JasyptConfigTest {
 	PooledPBEStringEncryptor encryptor;
 
 	@Test
-	public void 코드_암호화하기(){
+	public void 코드_암호화하기() {
 		// given
 		String key = "key"; // key
 		String url = "url"; // url

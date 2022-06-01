@@ -44,7 +44,7 @@ public class ItemService {
 
 		Item item = itemRepository.findById(id)
 			.orElseThrow(() -> new NotFoundException(Item.class, id));
-		
+
 		item.removeStock(qty);
 		itemRepository.save(item);
 	}

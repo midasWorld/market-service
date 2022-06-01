@@ -37,7 +37,8 @@ public class DummyItemData {
 	ProductRepository productRepository;
 
 	@Test
-	@Transactional @Commit
+	@Transactional
+	@Commit
 	@Order(1)
 	void dummyItem() {
 		List<Item> items = new ArrayList<>();
@@ -66,7 +67,8 @@ public class DummyItemData {
 	}
 
 	@Test
-	@Transactional @Commit
+	@Transactional
+	@Commit
 	@Order(2)
 	void dummyProduct() {
 		int count = 7_000_000;
@@ -83,6 +85,6 @@ public class DummyItemData {
 
 	private int getRandomNum(int min, int max) {
 		Random random = new Random();
-		return (int) ((Math.random() * (max - min)) + min);
+		return (int)((Math.random() * (max - min)) + min);
 	}
 }

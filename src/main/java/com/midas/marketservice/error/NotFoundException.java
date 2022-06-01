@@ -14,7 +14,8 @@ public class NotFoundException extends ServiceRuntimeException {
 	}
 
 	public NotFoundException(String targetName, Object... values) {
-		super(MESSAGE_KEY, MESSAGE_DETAILS, new String[]{targetName, (values != null && values.length > 0) ? StringUtils.join(values, ",") : ""});
+		super(MESSAGE_KEY, MESSAGE_DETAILS,
+			new String[] {targetName, (values != null && values.length > 0) ? StringUtils.join(values, ",") : ""});
 	}
 
 	@Override

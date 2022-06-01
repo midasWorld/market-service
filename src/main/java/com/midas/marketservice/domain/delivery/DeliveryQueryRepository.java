@@ -20,10 +20,10 @@ public class DeliveryQueryRepository {
 	public ProductQueryDto findOne(String barcode) {
 		return queryFactory
 			.select(Projections.constructor(ProductQueryDto.class,
-					product.id,
-					product.barcode,
-					product.item.id,
-					product.qty))
+				product.id,
+				product.barcode,
+				product.item.id,
+				product.qty))
 			.from(product)
 			.where(product.barcode.eq(barcode))
 			.fetchFirst();
