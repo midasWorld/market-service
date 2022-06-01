@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.midas.marketservice.domain.user.User;
 import com.midas.marketservice.domain.user.UserRepository;
+import com.midas.marketservice.error.NotFoundException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -38,7 +39,7 @@ public class UserService {
 		checkArgument(isNotEmpty(password), "password must be provided.");
 
 		User user = userRepository.findByEmail(email)
-			.orElseThrow(() -> new IllegalArgumentException("Could not found User with email=" + email));
+			.orElseThrow(() -> new NotFoundException(User.class, email));
 
 		user.verifyPassword(password);
 
